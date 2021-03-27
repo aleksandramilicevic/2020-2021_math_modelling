@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru-RU" xml:lang="ru-RU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Миличевич Александра, НПИ-02-18" />
+  <title>Отчет по лабораторной работе №5</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: PT Serif;
+      font-size: 12pt;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: PT Mono;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  = 20000
+  
+  
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Отчет по лабораторной работе №5</h1>
+<p class="subtitle">Модель хищник-жертва</p>
+<p class="author">Миличевич Александра, НПИ-02-18</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">Содержание</h2>
+
+</nav>
+<h1 id="цель-работы">Цель работы</h1>
+<p>Создать простейшую модель взаимодействия двух видов типа «хищник — жертва» - модель Лотки-Вольтерры</p>
+<h1 id="задание">Задание</h1>
+<p><strong>Вариант 27</strong></p>
+<p>Для модели хищник-жертва:</p>
+<p><span class="math inline">$\frac{dx}{dt}$</span> = -0.73x(t)+0.037x(t)y(t)</p>
+<p><span class="math inline">$\frac{dy}{dt}$</span> = -0.52x(t)+0.039x(t)y(t)</p>
+<p>Постройте график зависимости численности хищников от численности жертв,</p>
+<p>а также графики изменения численности хищников и численности жертв при</p>
+<p>следующих начальных условиях:</p>
+<p>x<sub>0</sub> = 7 , y<sub>0</sub> = 16</p>
+<p>Найдите стационарное состояние системы.</p>
+<h1 id="выполнение-лабораторной-работы">Выполнение лабораторной работы</h1>
+<h2 id="постановка-задачи">Постановка задачи</h2>
+<p>В лесу проживают х число волков, питающихся зайцами, число которых в этом же лесу у. Пока число зайцев достаточно велико, для прокормки всех волков, численность волков растет до тех пор, пока не наступит момент, что корма перестанет хватать на всех. Тогда волки начнут умирать, и их численность будет уменьшаться. В этом случае в какой-то момент времени численность зайцев снова начнет увеличиваться, что повлечет за собой новый рост популяции волков. Такой цикл будет повторяться, пока обе популяции будут существовать. Помимо этого, на численность стаи влияют болезни и старение. Данная модель описывается следующим уравнением:</p>
+<p><em><span class="math inline">$\frac{dx}{dt}$</span> = -ax(t)+bx(t)y(t)</em></p>
+<p><em><span class="math inline">$\frac{dx}{dt}$</span> = cy(t)+dx(t)y(t)</em></p>
+<p><em>a, d - коэффициенты смертности</em></p>
+<p><em>b, c - коэффициенты прироста популяции</em></p>
+<ol type="1">
+<li>Построить график зависимости x от y и графики функций</li>
+</ol>
+<p><em>x(t), y(t)</em></p>
+<ol start="2" type="1">
+<li>Найти стационарное состояние системы</li>
+</ol>
+<p>фомула по которой основиваем нашу систему (рис. <span class="citation" data-cites="fig:001">@fig:001</span>).</p>
+<figure>
+<img src="image/formula1.png" id="fig:001" style="width:70.0%" alt="Модель" /><figcaption aria-hidden="true">Модель</figcaption>
+</figure>
+<p>В этой модели <em>x</em> – число жертв, <em>y</em> - число хищников. Коэффициент a описывает скорость естественного прироста числа жертв в отсутствие хищников, с - естественное вымирание хищников, лишенных пищи в виде жертв. Вероятность взаимодействия жертвы и хищника считается пропорциональной как количеству жертв, так и числу самих хищников <em>(xy)</em>. Каждый акт взаимодействия уменьшает популяцию жертв, но способствует увеличению популяции хищников (члены -bxy и dxy в правой части уравнения).</p>
+<p><strong>Код задачи</strong></p>
+<pre><code>import numpy as np
+from scipy. integrate import odeint
+import matplotlib.pyplot as plt
+import math
+
+a = 0.73
+b = 0.037
+c = 0.52
+d = 0.039
+
+y0 = [16, 7]
+
+def syst2(y, t):
+    y1, y2 = y
+    return [-a*y1 + b*y1*y2, c*y2 - d*y1*y2 ]
+
+t = np.arange( 0, 200, 0.1)
+y = odeint(syst2, y0, t)
+y11 = y[:,0]
+y21 = y[:,1]
+
+fig = plt.figure(facecolor=&#39;white&#39;)
+plt.plot(t, y11, linewidth=2)
+plt.ylabel(&quot;x&quot;)
+plt.xlabel(&quot;t&quot;)
+plt.grid(True)
+plt.show()
+fig.savefig(&#39;01.png&#39;, dpi = 600)
+
+fig2 = plt.figure(facecolor=&#39;white&#39;)
+plt.plot(t, y21, linewidth=2)
+plt.ylabel(&quot;y&quot;)
+plt.xlabel(&quot;t&quot;)
+plt.grid(True)
+plt.show()
+fig2.savefig(&#39;02.png&#39;, dpi = 600)
+
+fig3 = plt.figure(facecolor=&#39;white&#39;)
+plt.plot(y11, y21, linewidth=2)
+plt.ylabel(&quot;y&quot;)
+plt.xlabel(&quot;x&quot;)
+plt.grid(True)
+plt.show()
+fig3.savefig(&#39;03.png&#39;, dpi = 600)
+
+print(&quot;Xст = &quot;, a/b)
+print(&quot;Yст = &quot;, c/d)</code></pre>
+<p><strong>Полученные графы</strong></p>
+<p>Построение графика колебаний изменения числапопуляции хищников (рис. <span class="citation" data-cites="fig:002">@fig:002</span>).</p>
+<figure>
+<img src="image/хищники.png" id="fig:002" style="width:70.0%" alt="Хищники" /><figcaption aria-hidden="true">Хищники</figcaption>
+</figure>
+<p>Построение графика колебаний изменения числа популяции жертв (рис. <span class="citation" data-cites="fig:003">@fig:003</span>)</p>
+<figure>
+<img src="image/жертвы.png" id="fig:003" style="width:70.0%" alt="Жертвы" /><figcaption aria-hidden="true">Жертвы</figcaption>
+</figure>
+<p>Построение графика зависимости изменения численности хищников от изменения численности жертв (рис. <span class="citation" data-cites="fig:004">@fig:004</span>)</p>
+<figure>
+<img src="image/Численность_изменения.png" id="fig:004" style="width:70.0%" alt="Численность_изменения" /><figcaption aria-hidden="true">Численность_изменения</figcaption>
+</figure>
+<p><em>Стационарное состояние системы</em></p>
+<p>Xст = 19.72972972972973 Yст = 13.333333333333334</p>
+<h1 id="выводы">Выводы</h1>
+<p>Выучила как построить граф изменения численности популяции жертв x и хищников и е</p>
+<p>и график зависимости изменения численности хищников от изменения численности жертв</p>
+</body>
+</html>

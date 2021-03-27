@@ -4,8 +4,6 @@ lang: ru-RU
 title: Модель жертва-хищник
 author:  Миличевич Александра, НПИ 02-18
 	
-institute: |
-	\inst{1}RUDN University, Moscow, Russian Federation
 	
 date: 13 March, 2021 Moscow, Russia
 
@@ -14,7 +12,7 @@ toc: false
 slide_level: 2
 theme: metropolis
 header-includes: 
- - \metroset{progressbar=frametitle,sectionpage=progressbar,numbering=fraction}
+ - '\metroset{progressbar=frametitle,sectionpage=progressbar,numbering=fraction}'
  - '\makeatletter'
  - '\beamer@ignorenonframefalse'
  - '\makeatother'
@@ -28,6 +26,7 @@ section-titles: true
 # Модель хищник-жертва 
 
 Формула на чей основе строим модель жертва-хищник (рис. -@fig:001).
+
 
 ![модель](image/formula1.png){ #fig:001 width=70% }
 
